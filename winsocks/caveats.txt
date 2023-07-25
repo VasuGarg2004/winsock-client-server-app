@@ -1,0 +1,8 @@
+- Finally, I hear that Windows has no fork() system call which is, unfortunately, used in some of my examples. 
+	- Maybe you have to link in a POSIX library or something to get it to work, or you can use CreateProcess() instead. 
+	- fork() takes no arguments, and CreateProcess() takes about 48 billion arguments. 
+	- If you’re not up to that, the CreateThread() is a little easier to digest
+	- unfortunately a discussion about multithreading is beyond the scope of this document.
+- For one thing, you can’t use close() to close a socket—you need to use closesocket(), instead. 
+- Also, select() only works with socket descriptors, not file descriptors (like 0 for stdin).
+- There is also a socket class that you can use, CSocket.
